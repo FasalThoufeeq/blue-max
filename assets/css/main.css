@@ -1597,6 +1597,15 @@ section {
   color: rgba(14, 29, 52, 0.8);
 }
 
+.contact .info-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact .info-item a:hover {
+  color: #000;
+}
+
 .contact .email-form {
   width: 100%;
   background: #fff;
@@ -1995,6 +2004,12 @@ section {
 
 .footer .footer-links ul a:hover {
   color: #fff;
+}
+
+.footer .footer-links ul li span {
+  color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  line-height: 1;
 }
 
 .footer .footer-contact p {
