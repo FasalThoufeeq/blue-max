@@ -38,8 +38,8 @@ const sendMail = () => {
         subject,
         message 
     }
-    const SERVICE_ID = "service_c6bzpg9"
-    const TEMPLATE_ID = "template_mqs247m"
+    const SERVICE_ID = "service_mbs8zpn"
+    const TEMPLATE_ID = "template_zlzy5ui"
     isValid&&emailjs.send(SERVICE_ID,TEMPLATE_ID,params)
     .then((res)=> {
         console.log('response :',res);
@@ -60,7 +60,7 @@ const sendMail = () => {
               }).showToast();
         }else {
             Toastify({
-                text: "Something went wrong! Email is not sent",
+                text: "Something went wrong! Email is not sentt",
                 duration: 4000,
                 close: true,
                 gravity: "top",
@@ -72,8 +72,9 @@ const sendMail = () => {
         }
     })
     .catch((err) => {
+        console.error("EMAILJS ERROR:", err);
         Toastify({
-            text: "Something went wrong! Email is not sent",
+            text: err,
             duration: 4000,
             close: true,
             gravity: "top", 
