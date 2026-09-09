@@ -4,6 +4,22 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site-lang") || "en";
+          if (lang === "ar") {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
+            document.documentElement.classList.add("lang-ar");
+          }
+        } catch (e) {}
+        setTimeout(function () {
+          document.documentElement.classList.add("i18n-ready");
+        }, 2000);
+      })();
+    </script>
+
     <title>BLUE MAX</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
@@ -311,5 +327,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js"></script>
   </body>
 </html>

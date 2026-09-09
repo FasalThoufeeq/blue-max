@@ -4,6 +4,22 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site-lang") || "en";
+          if (lang === "ar") {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
+            document.documentElement.classList.add("lang-ar");
+          }
+        } catch (e) {}
+        setTimeout(function () {
+          document.documentElement.classList.add("i18n-ready");
+        }, 2000);
+      })();
+    </script>
+
     <title>BLUE MAX</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
@@ -680,6 +696,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="assets/js/formValidate.js"></script>
     <script src="assets/js/formSubmit.js"></script>

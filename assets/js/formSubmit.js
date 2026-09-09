@@ -29,7 +29,7 @@ const sendMail = () => {
         document.querySelector('#error-message').textContent =''
         isValid = true
     }else{
-        document.querySelector('#error-message').textContent ='please fill all fields'
+        document.querySelector('#error-message').textContent = window.BlueMaxI18n ? BlueMaxI18n.t("fillAll") : 'please fill all fields'
     }
 
     var params = {
@@ -49,22 +49,22 @@ const sendMail = () => {
             document.getElementById('subject').value = '';
             document.getElementById('message').value = '';
             Toastify({
-                text: "Your Email Sent Successfully",
+                text: window.BlueMaxI18n ? BlueMaxI18n.t("emailSent") : "Your Email Sent Successfully",
                 duration: 4000,
                 close: true,
                 gravity: "top",
-                position: "right",
+                position: (window.BlueMaxI18n && BlueMaxI18n.getLang() === "ar") ? "left" : "right",
                 style: {
                   background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
               }).showToast();
         }else {
             Toastify({
-                text: "Something went wrong! Email is not sentt",
+                text: window.BlueMaxI18n ? BlueMaxI18n.t("emailFail") : "Something went wrong! Email is not sentt",
                 duration: 4000,
                 close: true,
                 gravity: "top",
-                position: "right",
+                position: (window.BlueMaxI18n && BlueMaxI18n.getLang() === "ar") ? "left" : "right",
                 style: {
                   background: "linear-gradient(45deg, #ff5733, #ff0000);",
                 },
